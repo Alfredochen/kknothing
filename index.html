@@ -9,100 +9,150 @@
     <title>Monster Survivors | Online Survival Action Game</title>
     <link rel="canonical" href="https://kknothing.online/" />
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS + Font -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f6f7fb 100%);
+        }
         .game-container {
             aspect-ratio: 16/9;
-            min-height: 600px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
         }
-        @media (max-width: 768px) {
-            .game-container {
-                min-height: 400px;
-            }
+        .feature-icon {
+            @apply w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-[system-ui] antialiased">
-    <!-- Header Section -->
-    <header class="bg-white shadow-sm">
-        <nav class="container mx-auto px-4 py-4">
+<body class="bg-gray-50 font-['Inter'] antialiased">
+    <!-- Gradient Header -->
+    <header class="hero-gradient border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-5">
             <div class="flex items-center justify-between">
-                <a href="/" class="text-xl font-semibold text-gray-900">kknothing.online</a>
+                <a href="/" class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-500 rounded-lg"></div>
+                    <span class="text-xl font-bold text-gray-900">MonsterSurvivors</span>
+                </a>
             </div>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
-            Monster Survivors
-        </h1>
-        
-        <p class="text-lg text-gray-600 mb-8 text-center max-w-2xl mx-auto">
-            Battle endless monster hordes in this intense survival shooter. How long can you last?
-        </p>
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Survive the <span class="gradient-text">Monster Apocalypse</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Engage in heart-pounding battles against evolving monsters in this ultimate survival challenge. Prove your skills in our global leaderboard!
+            </p>
+        </div>
 
         <!-- Game Embed -->
-        <div class="bg-white rounded-2xl shadow-xl p-4 mb-12">
-            <div class="game-container">
+        <div class="mb-20">
+            <div class="game-container mx-auto rounded-[1.5rem] overflow-hidden bg-white transform transition hover:scale-[1.02]">
                 <iframe 
                     src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" 
-                    class="w-full h-full rounded-lg border-0 overflow-hidden"
+                    class="w-full h-full"
                     allow="fullscreen" 
                     loading="eager"
                     title="Monster Survivors Game">
                 </iframe>
             </div>
+            <div class="mt-6 flex items-center justify-center gap-3 text-gray-500">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                <span class="text-sm">Click to start playing</span>
+            </div>
         </div>
 
-        <!-- Game Details -->
-        <section class="max-w-3xl mx-auto space-y-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">About the Game</h2>
-            <p class="text-gray-600 leading-relaxed">
-                Monster Survivors is a fast-paced survival shooter where players battle against increasingly difficult waves of monsters. Featuring intuitive controls, power-up systems, and dynamic environments, the game offers endless hours of action-packed gameplay. Compatible with both desktop and mobile browsers.
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Key Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Progressive difficulty system</li>
-                        <li>20+ unique monster types</li>
-                        <li>Real-time power-up upgrades</li>
-                        <li>Cross-platform compatibility</li>
-                    </ul>
+        <!-- Features Grid -->
+        <section class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto mb-20">
+            <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                <div class="feature-icon mb-5">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-900">System Requirements</h3>
-                    <ul class="list-[square] list-inside text-gray-600 space-y-2">
-                        <li>Chrome/Firefox/Safari</li>
-                        <li>2GB+ RAM recommended</li>
-                        <li>WebGL 2.0 support</li>
-                        <li>Stable internet connection</li>
-                    </ul>
-                </div>
+                <h3 class="text-xl font-semibold mb-3">Dynamic Combat</h3>
+                <p class="text-gray-500">Real-time weapon switching and adaptive enemy AI system</p>
             </div>
+            
+            <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                <div class="feature-icon mb-5">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Progression System</h3>
+                <p class="text-gray-500">Unlock 50+ upgrades and customize your playstyle</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl border border-gray-100">
+                <div class="feature-icon mb-5">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Multiplayer Ready</h3>
+                <p class="text-gray-500">Team up with friends in co-op survival mode</p>
+            </div>
+        </section>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">How to Play</h2>
-            <div class="bg-blue-50 rounded-xl p-6">
-                <ol class="list-decimal list-inside text-gray-700 space-y-3">
-                    <li>Click the game screen to activate controls</li>
-                    <li>Use WASD or arrow keys for movement</li>
-                    <li>Mouse to aim and shoot</li>
-                    <li>Collect power-ups to enhance abilities</li>
-                    <li>Survive as long as possible!</li>
-                </ol>
+        <!-- Visual Divider -->
+        <div class="my-16 border-t border-gray-200"></div>
+
+        <!-- Story Section -->
+        <section class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">The Last Stand</h2>
+            <p class="text-gray-500 text-lg leading-relaxed mb-12">
+                In a world overrun by genetic mutations, you are humanity's final hope. Master an arsenal of experimental weapons, strategize with dynamic environments, and survive the ever-evolving monster onslaught. Every decision counts in this beautifully chaotic survival epic.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="flex items-start gap-4">
+                    <div class="w-14 flex-shrink-0">
+                        <div class="feature-icon">
+                            <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Smart Enemies</h3>
+                        <p class="text-gray-500">AI-powered monsters that learn from your tactics</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-14 flex-shrink-0">
+                        <div class="feature-icon">
+                            <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Secure Play</h3>
+                        <p class="text-gray-500">Military-grade encryption for all gameplay data</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-50 border-t mt-16">
-        <div class="container mx-auto px-4 py-8 text-center text-gray-500">
-            <p>© 2024 kknothing.online - Play Monster Survivors Online</p>
-            <p class="mt-2 text-sm">Optimized for Chrome, Firefox and Safari browsers</p>
+    <!-- Gradient Footer -->
+    <footer class="hero-gradient border-t border-gray-100 mt-24">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-500 rounded-lg"></div>
+                        <span class="text-xl font-bold">MonsterSurvivors</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">© 2024 kknothing.online</p>
+                </div>
+                <div class="flex gap-8">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition">Leaderboard</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition">FAQ</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition">Contact</a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
